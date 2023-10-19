@@ -16,6 +16,12 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@1
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+    vstsFeed: 'd6c399c5-238d-4f3c-98a2-390eb469514d'
 
 - task: VSBuild@1
   inputs:
